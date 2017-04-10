@@ -1,10 +1,5 @@
 import json
-import pickle
-
-from spacy.en import English
-
 from file_utilities import open_json, write_json
-from text_tokenize_lemmatize import tokenizer_lemmatizer
 
 def list_flavors(flavor_table, level):
 
@@ -20,10 +15,12 @@ levels.
 Calling list_flavors(flavor_table, 1) from another function will query the flavor_table to return a list of strings with tags from a particular level
   (in this example, level 1: ['Nutty/Cocoa', 'Sour/Fermented',...,'Fruity']).
 
+
 input: list of dictionaries, int 
 output: list of str
 
 """
+
    key_str = 'level_{}'.format(level)
    return list(set([ f[key_str] for f in flavor_table if f[key_str] ]))
 
