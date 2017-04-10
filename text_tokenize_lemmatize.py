@@ -3,6 +3,7 @@ import json
 
 import nltk
 from spacy.en import English
+from stop_words import get_stop_words
 
 from file_utilities import open_json, write_json
 
@@ -36,7 +37,7 @@ def tokenizer_lemmatizer(text, parser, stopwords=[]):
     """
     parsed_data = parser(text)
     list_of_lemmatized_tokens = \
-        [token.lemma_ for token in parsed_data if not token.is_punct]
+        [token.lemma_ for token in parsed_data if not str(token) in stopwords]
 
     return list_of_lemmatized_tokens
 
@@ -61,13 +62,17 @@ def list_bigrams(text, parser):
 
 if __name__ == '__main__':
     spacy_parser = English()
+    en_stop = get_stop_words('en')
+    # nltk_stemmer = nltk.stem.PorterStemmer()
+
+    # directory_prefix = "flavor_wheel/"
 
     list_of_tasting_notes = open_json("tasting_notes.json")
     print "Read {} tasting notes from json.".format(len(list_of_tasting_notes))
 
     lemmatized_notes = \
         [tokenizer_lemmatizer(
-            tasting_notes, spacy_parser, stopwords=[u',', u'.', u'!', u';', u':', u'?'])
+            tasting_notes, spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a','-'])
          for tasting_notes in list_of_tasting_notes]
 
     print "Created lemmatized notes. Example:", lemmatized_notes[0]
