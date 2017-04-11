@@ -1,0 +1,11 @@
+
+# Requirements for CoffeeFlavors.
+# To use type: pip install -r requirements.txt
+
+## Requirements without Version specifiers
+io
+os
+json
+unittest
+spacy.en
+nltk
