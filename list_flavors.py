@@ -31,6 +31,7 @@ def list_flavors(flavor_table, level):
 if __name__ == '__main__':
    flavor_dict = open_json('scaa_flavor_wheel.json')
 
+   flavor_table_processed = []
    flavor_table = []
 
    for level_1 in flavor_dict['children']:
@@ -38,22 +39,22 @@ if __name__ == '__main__':
            if 'children' in level_2.keys():
                for level_3 in level_2['children']:
 
-                   level_1_flavor = stemmer(tokenizer_lemmatizer(level_1['flavor'],
+                   level_1_flavor_processed = stemmer(tokenizer_lemmatizer(level_1['flavor'],
                     spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-                   level_2_flavor = stemmer(tokenizer_lemmatizer(level_2['flavor'],
+                   level_2_flavor_processed = stemmer(tokenizer_lemmatizer(level_2['flavor'],
                     spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-                   level_3_flavor = stemmer(tokenizer_lemmatizer(level_3['flavor'],
+                   level_3_flavor_processed = stemmer(tokenizer_lemmatizer(level_3['flavor'],
                     spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
                    
-                   flavor_table.append({ 'level_1': str(level_1_flavor[0]), 
-                    'level_2': str(level_2_flavor[0]), 'level_3': str(level_3_flavor[0])})
+                   flavor_table_processed.append({ 'level_1': str(level_1_flavor_processed[0]), 
+                    'level_2': str(level_2_flavor_processed[0]), 'level_3': str(level_3_flavor_processed[0])})
            else:
-              level_1_flavor = stemmer(tokenizer_lemmatizer(level_1['flavor'],
+              level_1_flavor_processed = stemmer(tokenizer_lemmatizer(level_1['flavor'],
                     spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-              level_2_flavor = stemmer(tokenizer_lemmatizer(level_2['flavor'],
+              level_2_flavor_processed = stemmer(tokenizer_lemmatizer(level_2['flavor'],
                     spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-              flavor_table.append({ 'level_1': str(level_1_flavor[0]), 
-                'level_2': str(level_2_flavor[0]), 'level_3':None})
+              flavor_table_processed.append({ 'level_1': str(level_1_flavor_processed[0]), 
+                'level_2': str(level_2_flavor_processed[0]), 'level_3':None})
 
    write_json(data=flavor_table, filepath="flavor_table.json")
    print "Wrote flavor wheel to file."
