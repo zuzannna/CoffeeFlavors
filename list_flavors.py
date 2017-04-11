@@ -48,13 +48,22 @@ if __name__ == '__main__':
                    
                    flavor_table_processed.append({ 'level_1': str(level_1_flavor_processed[0]), 
                     'level_2': str(level_2_flavor_processed[0]), 'level_3': str(level_3_flavor_processed[0])})
-           else:
-              level_1_flavor_processed = stemmer(tokenizer_lemmatizer(level_1['flavor'],
-                    spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-              level_2_flavor_processed = stemmer(tokenizer_lemmatizer(level_2['flavor'],
-                    spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
-              flavor_table_processed.append({ 'level_1': str(level_1_flavor_processed[0]), 
-                'level_2': str(level_2_flavor_processed[0]), 'level_3':None})
 
+                   flavor_table.append({ 'level_1': level_1['flavor'], 
+                    'level_2': level_2['flavor'], 'level_3': level_3['flavor']})
+           else:
+              flavor_table.append({ 'level_1': level_1['flavor'], 
+                    'level_2': level_2['flavor'], 'level_3': None})
+
+              level_1_flavor_processed = stemmer(tokenizer_lemmatizer(level_1['flavor'],
+                spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
+              level_2_flavor_processed = stemmer(tokenizer_lemmatizer(level_2['flavor'],
+                spacy_parser, stopwords=[',', '.', '!', ';', ':', '?','and','a']))
+              
+              flavor_table_processed.append({ 'level_1': str(level_1_flavor_processed[0]), 
+                'level_2': str(level_2_flavor_processed[0]), 'level_3': None})
+
+
+   write_json(data=flavor_table_processed, filepath="flavor_table_processed.json")
    write_json(data=flavor_table, filepath="flavor_table.json")
    print "Wrote flavor wheel to file."
