@@ -2,7 +2,6 @@ import json
 from file_utilities import open_json, write_json
 from text_tokenize_lemmatize import tokenizer_lemmatizer, stemmer
 from spacy.en import English
-from unidecode import unidecode
 spacy_parser = English()
 
 def list_flavors(flavor_table, level):
