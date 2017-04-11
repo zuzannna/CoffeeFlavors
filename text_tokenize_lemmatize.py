@@ -1,7 +1,11 @@
 import io, os
 import json
 
-import nltk
+#import nltk
+from nltk.stem.porter import PorterStemmer
+
+
+
 from spacy.en import English
 from stop_words import get_stop_words
 
@@ -42,11 +46,12 @@ def tokenizer_lemmatizer(text, parser, stopwords=[]):
     return list_of_lemmatized_tokens
 
 
-def stemmer(tokenized_text, stemmer):
+def stemmer(tokenized_text):
     """
     Take a unicode string of text and return a list containing the stemmed tokens
     Output: list of stemmed tokens
     """
+    stemmer = PorterStemmer()
     return [stemmer.stem(plural) for plural in tokenized_text]
 
 
@@ -62,10 +67,6 @@ def list_bigrams(text, parser):
 
 if __name__ == '__main__':
     spacy_parser = English()
-    en_stop = get_stop_words('en')
-    # nltk_stemmer = nltk.stem.PorterStemmer()
-
-    # directory_prefix = "flavor_wheel/"
 
     list_of_tasting_notes = open_json("tasting_notes.json")
     print "Read {} tasting notes from json.".format(len(list_of_tasting_notes))
