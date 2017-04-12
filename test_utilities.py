@@ -29,7 +29,14 @@ class TestUtilities(TestCase):
 
 
     def test_tokenizer_lemmatizer(self):
-
+        
+        spacy_parser = English()
+        stopwords=[',', '.', '!', ';', ':', '?','and','a','-']
+        text = 'blackberries with hints of pineapple'
+        expected_output = [u'blackberry', u'with', u'hint', 
+        u'of', u'pineapple']
+        actual_output = text_.tokenizer_lemmatizer(unicode(text),
+            spacy_parser, stopwords=stopwords)
 
     def test_stemmer(self):
         
