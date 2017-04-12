@@ -32,7 +32,7 @@ def write_json(data, filepath):
         json.dump(data, f)
 
 
-def find_labels(word, flavor_table, flavor_table_processed):
+def find_labels(word, flavor_table=None, flavor_table_processed=None):
     
     """
     Searches flavor_table_processed containing tokenized, lemmatized 
@@ -46,11 +46,19 @@ def find_labels(word, flavor_table, flavor_table_processed):
     :rvalue: str
     """
 
+    if flavor_table is None:
+        flavor_table = open_json(filepath='flavor_table.json')
+        
+    if flavor_table_processed is None:
+        flavor_table_processed = \
+            open_json(filepath='flavor_table_processed.json')
+
+
     # First check if word is in the flavor wheel at all
     flavors = open_json('flavors.json')
 
     if word in flavors:
-        
+
         # If the searched word is in the list containing all words
         # from the flavor wheel proceed to find the match and 
         # its parents
