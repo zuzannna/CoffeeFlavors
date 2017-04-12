@@ -37,7 +37,11 @@ it will return a list of lists containing tags from the flavor wheel ('u' means 
     [u'Sour/Fermented', u'Sour', u'Citric Acid']]
 </pre>
 
-You can also call the function <code>/coffee_flavors(text)/</code> from within another function and it will return a list like above. This use case is more practical when you have a number of notes which need to be tagged.  
+You can also call the function <code>/coffee_flavors(text)/</code> from within another function and it will return a list like above. This use case is more practical when you have a number of notes which need to be tagged. For example, if you have a .json file containing a list of notes from which you want to tag first 20, you can use it in the following way:
+
+    notes = open_json(filepath='tasting_notes.json')
+    tags = [coffee_flavors(note) for note in notes[0:19]]
+
 
 ## Testing
 
@@ -55,6 +59,11 @@ In order to validate my approach I manually tagged 18 review notes and compared 
 
 
 To do:
+
+version number in requirements
+mkdir images and put wheel
+mkdir tests add init.py which imports funcs (mike's tree function)
+test flavor list (only with one level of flavor wheel)
 
 1. detailing installation, usage and contribution instructions.
 
