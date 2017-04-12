@@ -33,7 +33,7 @@ def write_json(data, filepath):
 
 
 def find_labels(word, flavor_table, flavor_table_processed):
-    from list_flavors import list_flavors
+    
     """
     Searches flavor_table_processed containing tokenized, lemmatized 
     and stemmed words to find appropriate tags and returns 
@@ -47,10 +47,7 @@ def find_labels(word, flavor_table, flavor_table_processed):
     """
 
     # First check if word is in the flavor wheel at all
-    flavors = list_flavors(flavor_table_processed, 1)+\
-    list_flavors(flavor_table_processed, 2)+\
-    list_flavors(flavor_table_processed, 3)
-    flavors = set(flavors)
+    flavors = open_json('flavors.json')
 
     if word in flavors:
         # If it is search through the list to find the match
