@@ -10,9 +10,27 @@ egg packaging
 
 ## Introduction
 
-The goal of this library is to identify flavor categories from the SCAA flavor wheel](http://www.scaa.org/chronicle/wp-content/uploads/2016/01/SCAA_FlavorWheel.01.18.15.jpg).
+The goal of this library is to identify flavor categories from the [SCAA flavor wheel](http://www.scaa.org/chronicle/wp-content/uploads/2016/01/SCAA_FlavorWheel.01.18.15.jpg) in notes provided either as an input in the terminal or as a list of notes in a .json file.
 
 ![flavor_wheel](flavor_wheel.png)
+
+For example, when you call the 
+
+    python coffee_flavors.py   
+
+and type in 
+
+    Sweet grapefruit, lemon-lime and fruit punch with citric, tartaric acidity and a heavy mouthfeel.
+
+it will return 
+
+<pre>
+    [[u'Sweet'],
+    [u'Fruity', u'Citrus Fruit', u'Grapefruit'],
+    [u'Fruity', u'Citrus Fruit', u'Lemon'],
+    [u'Fruity', u'Citrus Fruit', u'Lime'],
+    [u'Sour/Fermented', u'Sour', u'Citric Acid']]
+</pre>
 
 ## Testing
 
