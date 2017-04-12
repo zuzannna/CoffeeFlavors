@@ -1,13 +1,3 @@
-To do:
-
-1. detailing installation, usage and contribution instructions.
-
-requirements
-test
-tradeoffs
-time spent
-egg packaging
-
 ## Introduction
 
 Classification and tagging of text samples has a number of applications in the industry: customer service, processing of text orders or archiving, to name just a few. Doing it by hand takes a lot of time and requires sustained attention😴. Thankfully, repetitive and boring tasks are one of the things computers are **really** good at 💯💻. 
@@ -62,6 +52,18 @@ You will then see a report on the testing results.
 In order to validate my approach I manually tagged 18 review notes and compared it to the output of the <code>/coffee_flavors.py/</code>, which overalpped in 88%. Examining the errors was interesting. I noticed, for example, that *caramel* and *fruit* (but not *fruity*) was consistently missing in the output of the <code>/coffee_flavors.py/</code> while *green tea* was falsely tagged as *Green / Vegetative*. I discuss why these errors most likely occur and how to fix them in the section "Further steps".
 
 ![validation](validation.png)
+
+
+To do:
+
+1. detailing installation, usage and contribution instructions.
+
+requirements
+test
+tradeoffs
+time spent
+egg packaging
+
 
 
 To do with the actual code:
