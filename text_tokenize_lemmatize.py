@@ -3,6 +3,7 @@ import json
 from nltk.stem.porter import PorterStemmer
 from spacy.en import English
 from file_utilities import open_json, write_json
+
 """
 These are some helper functions for NLP analysis for the Coffee
 Flavors project. 
