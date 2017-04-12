@@ -18,18 +18,27 @@ list of unicode strings with tags.
 :rvalue: unicode 
 """
 
-def coffee_flavors(text):
-	spacy_parser = English()
-	stopwords=[',', '.', '!', ';', ':', '?','and','a','-']
-	flavor_table = open_json(filepath='flavor_table.json')
-	flavor_table_processed = \
-	open_json(filepath='flavor_table_processed.json')
+def coffee_flavors(text, flavor_table=None, flavor_table_processed=None,
+	parser=None, stopwords=None):
+	
+	if parser is None:
+		parser = English()
+
+	if stopwords is None:
+		stopwords=[',', '.', '!', ';', ':', '?','and','a','-']
+
+	if flavor_table is None:
+		flavor_table = open_json(filepath='flavor_table.json')
+		
+	if flavor_table_processed is None:
+		flavor_table_processed = \
+			open_json(filepath='flavor_table_processed.json')
 
 	tags = []
 	sentence = text
 
 	tokenized_sentence = tokenizer_lemmatizer(
-	            unicode(sentence), spacy_parser, stopwords=stopwords)
+	            unicode(sentence), parser, stopwords=stopwords)
 	stemmed_tokenized_sentence = stemmer(tokenized_sentence)
 
 
@@ -53,7 +62,7 @@ if __name__ == '__main__':
 	sentence = raw_input()
 
 	tokenized_sentence = tokenizer_lemmatizer(
-	            unicode(sentence), spacy_parser, stopwords=stopwords)
+	            unicode(sentence), parser, stopwords=stopwords)
 	stemmed_tokenized_sentence = stemmer(tokenized_sentence)
 
 

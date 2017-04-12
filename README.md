@@ -53,7 +53,7 @@ You can also call the function <code>/coffee_flavors(text)/</code> from within a
 
 To test the code to make sure it works run the following command in your terminal shell from the <code>/CoffeeFlavors/</code>directory:
 
-	py.test tests	
+	python test_utilities.py	
 
 You will then see a report on the testing results.
 
