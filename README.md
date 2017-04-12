@@ -8,6 +8,11 @@ tradeoffs
 time spent
 egg packaging
 
+## Introduction
+
+The goal of this library is to identify flavor categories from the SCAA flavor wheel](http://www.scaa.org/chronicle/wp-content/uploads/2016/01/SCAA_FlavorWheel.01.18.15.jpg).
+
+![flavor_wheel](flavor_wheel.png)
 
 ## Testing
 
@@ -29,10 +34,6 @@ input output
 testing
 egg / wheel packaging 
 
-
-
-How I sped up the alrgorithm:
-- first searching through a set of all flavors decreased the execution time from 7.3s to 0.06s.
 
 What would I do if I had more time? [Not supported in the library]:
 - spelling errors (https://github.com/mattalcock/blog/blob/master/2012/12/5/python-spell-checker.rst)
