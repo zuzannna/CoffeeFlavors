@@ -2,7 +2,7 @@ import unittest
 import sys, os, os.path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
 import src.file_utilities as u
-import coffee_flavors as coffee
+import src.coffee_flavors as coffee
 import src.text_tokenize_lemmatize as t
 from spacy.en import English
 

@@ -45,15 +45,15 @@ def find_labels(word, flavor_table=None, flavor_table_processed=None):
     """
 
     if flavor_table is None:
-        flavor_table = open_json(filepath='data/flavor_table.json')
+        flavor_table = open_json(filepath='src/data/flavor_table.json')
         
     if flavor_table_processed is None:
         flavor_table_processed = \
-            open_json(filepath='data/flavor_table_processed.json')
+            open_json(filepath='src/data/flavor_table_processed.json')
 
 
     # First check if word is in the flavor wheel at all
-    flavors = open_json('data/flavors.json')
+    flavors = open_json('src/data/flavors.json')
 
     if word in flavors:
 
