@@ -69,7 +69,3 @@ To test the code to make sure it works run the following command in your termina
 
 You will then see a report on the testing results.
 
-To do:
-what's wrong with ImportError: No module named file_utilities when calling python test_utilities.py 
-contributions
-egg / wheel packaging 
