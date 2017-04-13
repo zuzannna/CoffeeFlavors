@@ -53,24 +53,24 @@ def find_labels(word, flavor_table=None, flavor_table_processed=None):
 
 
     # First check if word is in the flavor wheel at all
-    #flavors = open_json('flavors.json')
+    flavors = open_json('data/flavors.json')
 
-    #if word in flavors:
+    if word in flavors:
 
         # If the searched word is in the list containing all words
         # from the flavor wheel proceed to find the match and 
         # its parents
 
-    for i,flavor in enumerate(flavor_table):
-        if word in flavor_table_processed[i].values():
-            if flavor_table_processed[i]['level_3'] and \
-            word in flavor_table_processed[i]['level_3']: 
-            #'None' returns a false in a conditional statement 
-            # so we need to use this
-                return flavor_table[i].values()
-            elif word in flavor_table_processed[i]['level_2']:
-                return [flavor_table[i]['level_1'], \
-                flavor_table[i]['level_2']]
-            else:
-                return [flavor_table[i]['level_1']]
+        for i,flavor in enumerate(flavor_table):
+            if word in flavor_table_processed[i].values():
+                if flavor_table_processed[i]['level_3'] and \
+                word in flavor_table_processed[i]['level_3']: 
+                #'None' returns a false in a conditional statement 
+                # so we need to use this
+                    return flavor_table[i].values()
+                elif word in flavor_table_processed[i]['level_2']:
+                    return [flavor_table[i]['level_1'], \
+                    flavor_table[i]['level_2']]
+                else:
+                    return [flavor_table[i]['level_1']]
 

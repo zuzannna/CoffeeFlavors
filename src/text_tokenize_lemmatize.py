@@ -43,27 +43,6 @@ def stemmer(tokenized_text):
     return [stemmer.stem(plural) for plural in tokenized_text]
 
 
-def list_bigrams(text, parser):
-    """
-    Take a unicode string of text and return a list containing the 
-    bigrams
-
-    :param: list of unicode
-
-    :returns: list
-
-    :rvalue: unicode
-    """
-    list_of_tokens = spacy_tokenizer(text, parser)
-    list_of_bigrams = []
-
-    for i in range(1, len(list_of_tokens)):
-        list_of_bigrams.append(list_of_tokens[i-1] \
-            + " " + list_of_tokens[i])
-
-    return list_of_bigrams
-
-
 if __name__ == '__main__':
     """
     Take a unicode list of strings and return a list containing the 
