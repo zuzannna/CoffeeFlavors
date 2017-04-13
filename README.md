@@ -63,9 +63,9 @@ To install the requirements with pip (except for Python), type in the main direc
 
 ## Testing
 
-To test the code to make sure it works run the following command in your terminal shell from the <code>/CoffeeFlavors/tests</code>directory:
+To test the code to make sure it works run the following command in your terminal shell from the <code>/CoffeeFlavors/</code>directory:
 
-    python test_utilities.py    
+    python tests/test_utilities.py    
 
 You will then see a report on the testing results.
 
