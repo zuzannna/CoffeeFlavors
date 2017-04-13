@@ -29,11 +29,11 @@ def coffee_flavors(text, flavor_table=None, flavor_table_processed=None,
 		stopwords=[',', '.', '!', ';', ':', '?','and','a','-']
 
 	if flavor_table is None:
-		flavor_table = open_json(filepath='flavor_table.json')
+		flavor_table = open_json(filepath='data/flavor_table.json')
 		
 	if flavor_table_processed is None:
 		flavor_table_processed = \
-			open_json(filepath='flavor_table_processed.json')
+			open_json(filepath='data/flavor_table_processed.json')
 
 	tags = []
 	sentence = text
