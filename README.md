@@ -37,14 +37,6 @@ In order to validate my approach I manually tagged 18 review notes and compared 
 
 ![validation](images/validation.png)
 
-## Testing
-
-To test the code to make sure it works run the following command in your terminal shell from the <code>/CoffeeFlavors/tests</code>directory:
-
-    python test_utilities.py    
-
-You will then see a report on the testing results.
-
 ## Next steps
 There is always something to improve. I think of this code as a prototype which deals with simplest cases. Let me walk you through the matching process.
 
@@ -69,6 +61,13 @@ To install the requirements with pip (except for Python), type in the main direc
 
 <code> pip install -r requirements.txt </code>
 
+## Testing
+
+To test the code to make sure it works run the following command in your terminal shell from the <code>/CoffeeFlavors/tests</code>directory:
+
+    python test_utilities.py    
+
+You will then see a report on the testing results.
 
 To do:
 what's wrong with ImportError: No module named file_utilities when calling python test_utilities.py 
