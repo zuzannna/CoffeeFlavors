@@ -8,7 +8,7 @@ The goal of this library is to automatically tag flavor categories from the [SCA
 
 ## Usage
 
-There are two ways to use functions in this repo. The first use case applies to a situation when you want to quickly tag a few notes. When you call the following function in the terminal from <code>/CoffeeFlavors/</code>directory:
+There are two ways to use functions in this repo. The first use case applies to a situation when you want to quickly tag a few notes. When you call the following function in the terminal from <code>/CoffeeFlavors/src</code>directory:
 
     python coffee_flavors.py   
 

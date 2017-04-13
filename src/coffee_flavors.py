@@ -1,6 +1,6 @@
 import json
-from src.file_utilities import open_json, write_json, find_labels
-from src.text_tokenize_lemmatize import tokenizer_lemmatizer, stemmer
+from file_utilities import open_json, write_json, find_labels
+from text_tokenize_lemmatize import tokenizer_lemmatizer, stemmer
 from spacy.en import English
 
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 	open_json(filepath='data/flavor_table_processed.json')
 
 	tags = []
-	sentence = raw_input()
+	sentence = raw_input('Enter the sentence: ')
 
 	tokenized_sentence = tokenizer_lemmatizer(
 	            unicode(sentence), parser, stopwords=stopwords)
